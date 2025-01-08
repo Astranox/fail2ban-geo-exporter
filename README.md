@@ -1,5 +1,9 @@
 # fail2ban-geo-exporter
 
+Patched to talk to fail2ban directly instead of querying the database.
+
+Forked from vcloudcraft/fail2ban-geo-exporter
+
 It's all in the description already. This little program will expose Prometheus metrics for every IP banned by `fail2ban`. You can have them geotagged or disable tagging if you just want the IP and the jail it's coming from.
 
 NOTE: This software assumes your fail2ban jail definitions are all in a single file. Multiple definites under `jail.d/` are currently not supported.

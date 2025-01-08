@@ -13,6 +13,3 @@ geo:
 #            city: 'Error'
 #            latitude: '0'
 #            longitude: '0'
-f2b:
-    conf_path: '/etc/fail2ban'
-    db: '/var/lib/fail2ban/fail2ban.sqlite3'
