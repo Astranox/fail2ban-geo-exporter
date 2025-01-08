@@ -40,7 +40,7 @@ class F2bCollector:
         for jaildict in bans:
             for jailname in jaildict:
                 jail = Jail(jailname)
-                for ip in jaildict[jail]:
+                for ip in jaildict[jailname]:
                     jail.ip_list.append({'ip': ip})
 
                 self.jails.append(jail)
