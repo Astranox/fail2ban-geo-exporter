@@ -1,0 +1,13 @@
+[Unit]
+Description=fail2ban geo exporter
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/etc/prometheus/fail2ban-geo-exporter
+ExecStart=/usr/bin/python3 /usr/lib/prometheus-fail2ban-geo-exporter/fail2ban-exporter.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
