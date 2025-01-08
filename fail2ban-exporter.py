@@ -16,6 +16,7 @@ class Jail:
 class F2bCollector:
     def __init__(self, conf):
         self.geo_provider = self._import_provider(conf)
+        self.conf = conf
         self.jails = []
         self.extra_labels = sorted(self.geo_provider.get_labels())
 
@@ -49,11 +50,11 @@ class F2bCollector:
             for entry in jail.ip_list:
                 entry.update(self.geo_provider.annotate(entry['ip']))
 
-    def collect(self, conf):
+    def collect(self):
         self.get_jailed_ips()
         self.assign_location()
 
-        if conf['geo']['enable_grouping']:
+        if self.conf['geo']['enable_grouping']:
             yield self.expose_grouped()
             yield self.expose_jail_summary()
         else:
