@@ -1,13 +1,13 @@
 server:
-    listen_address: 127.0.0.1
-    port: 9192
+  listen_address: 127.0.0.1
+  port: 9192
 geo:
-    enabled: True
-    provider: 'MaxmindDB'
-    enable_grouping: False
-    maxmind:
-        db_path: '/usr/share/prometheus-fail2ban-geo-exporter/GeoLite2-City.mmdb'
-        on_error:
-            city: 'Atlantis'
-            latitude: '0'
-            longitude: '0'
+  enabled: True
+  provider: 'MaxmindDB'
+  enable_grouping: False
+  maxmind:
+    db_path: '/usr/share/prometheus-fail2ban-geo-exporter/GeoLite2-City.mmdb'
+    on_error:
+      city: 'Error'
+      latitude: '0'
+      longitude: '0'
